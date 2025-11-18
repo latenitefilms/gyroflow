@@ -24,7 +24,7 @@ pub fn init_lens_profile(md: &mut FileMetadata, input: &telemetry_parser::Input,
                 let crop_size = crop_size?;
 
                 let video_rotation = info.video_rotation.unwrap_or_default().abs();
-                let is_vertical = video_rotation == 90 || video_rotation == 270;
+                let is_vertical = false; //video_rotation == 90 || video_rotation == 270;
 
                 let focal_length_str = tag_map.get(&GroupId::Lens)
                     .and_then(|x| x.get_t(TagId::FocalLength) as Option<&f32>)
